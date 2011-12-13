@@ -3,4 +3,7 @@
 # is deployed and started.  This script gets executed directly, so 
 # it could be python, php, ruby, etc.
 
+# Activate VirtualEnv in order to use the correct libraries
+source $OPENSHIFT_APP_DIR/virtenv/bin/activate
+
 python $OPENSHIFT_REPO_DIR/.openshift/action_hooks/cloudberry-openshift-express-python
