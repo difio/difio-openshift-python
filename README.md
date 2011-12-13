@@ -24,6 +24,5 @@ Then push the repo to OpenShift
     git push
 
 That's it, you can now checkout your application statistics at:
-
-    <http://cvmon-otb.rhcloud.com>
+<http://cvmon-otb.rhcloud.com>
 
