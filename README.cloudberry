@@ -19,7 +19,11 @@ Add this upstream repo
     git remote add cloudberry -m master https://bitbucket.org/atodorov/cloudberry-openshift-express-python.git
     git pull -s recursive -X theirs cloudberry master
 
-Then push the repo to OpenShift
+Set your username in the ./data/CLOUDBERRY_USERNAME file
+
+    echo "export CLOUDBERRY_USERNAME='YourUserName'" > ./data/CLOUDBERRY_USERNAME
+
+Then push the application to OpenShift
 
     git push
 
