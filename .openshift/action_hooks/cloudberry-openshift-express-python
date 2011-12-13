@@ -25,7 +25,7 @@
 #
 #####################################################################################
 
-__version__ = 0.3
+__version__ = 0.4
 
 import os
 import sys
@@ -36,6 +36,7 @@ from exceptions import BaseException
 from pip.util import get_installed_distributions
 
 data = {
+    'username' : os.environ['CLOUDBERRY_USERNAME'],
     'name' : os.environ['OPENSHIFT_APP_NAME'],
     'uuid' : os.environ['OPENSHIFT_APP_UUID'],
     'type' : os.environ['OPENSHIFT_APP_TYPE'],
@@ -47,14 +48,8 @@ data = {
 for dist in get_installed_distributions(local_only=True):
     data['installed'].append({'n' : dist.project_name, 'v' : dist.version})
 
-
 json_data = json.dumps(data)
-
-
-params = urllib.urlencode(
-        {'json_data' : json_data,
-         'username' : os.environ['CLOUDBERRY_USERNAME']
-        })
+params = urllib.urlencode({'json_data' : json_data})
 
 conn = httplib.HTTPSConnection('cvmon-otb.rhcloud.com')
 conn.request('POST', '/application/register', params)
