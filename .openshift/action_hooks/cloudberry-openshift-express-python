@@ -52,7 +52,7 @@ json_data = json.dumps(data)
 params = urllib.urlencode({'json_data' : json_data})
 
 conn = httplib.HTTPSConnection('cvmon-otb.rhcloud.com')
-conn.request('POST', '/application/register', params)
+conn.request('POST', '/application/register/', params)
 response = conn.getresponse()
 
 if (response.status != 200) or (not response.getheader('Content-type').startswith('application/json')):
