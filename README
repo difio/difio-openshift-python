@@ -16,7 +16,7 @@ Create a wsgi-3.2 application on OpenShift
 Add this upstream repo
 
     cd myapp
-    git remote add cloudberry -m master git@bitbucket.org:atodorov/cloudberry-openshift-express-python.git
+    git remote add cloudberry -m master https://bitbucket.org/atodorov/cloudberry-openshift-express-python.git
     git pull -s recursive -X theirs cloudberry master
 
 Then push the repo to OpenShift
