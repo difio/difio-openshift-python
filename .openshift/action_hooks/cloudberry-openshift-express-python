@@ -25,7 +25,7 @@
 #
 #####################################################################################
 
-__version__ = 0.4
+__version__ = 0.5
 
 import os
 import sys
@@ -40,7 +40,7 @@ data = {
     'name' : os.environ['OPENSHIFT_APP_NAME'],
     'uuid' : os.environ['OPENSHIFT_APP_UUID'],
     'type' : os.environ['OPENSHIFT_APP_TYPE'],
-    'url'  : os.environ['OPENSHIFT_APP_DNS'],
+    'url'  : 'http://%s' % os.environ['OPENSHIFT_APP_DNS'],
     'vendor' : 0, # Red Hat OpenShift Express
     'installed' : [],
 }
