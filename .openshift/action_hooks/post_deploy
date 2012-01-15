@@ -6,7 +6,7 @@
 # Activate VirtualEnv in order to use the correct libraries
 source $OPENSHIFT_APP_DIR/virtenv/bin/activate
 
-# Set the username
-source $OPENSHIFT_REPO_DIR/data/CLOUDBERRY_USERNAME
+# Set user defined settings
+source $OPENSHIFT_REPO_DIR/data/CLOUDBERRY_SETTINGS
 
 python $OPENSHIFT_REPO_DIR/.openshift/action_hooks/cloudberry-openshift-express-python
