@@ -24,7 +24,7 @@
 #
 #####################################################################################
 
-__version__ = 0.8
+__version__ = 0.9
 
 import os
 import sys
@@ -53,7 +53,7 @@ for dist in get_installed_distributions(local_only=True):
 json_data = json.dumps(data)
 params = urllib.urlencode({'json_data' : json_data})
 
-conn = httplib.HTTPSConnection('cvmon-otb.rhcloud.com')
+conn = httplib.HTTPSConnection('monupco-otb.rhcloud.com')
 conn.request('POST', '/application/register/', params)
 response = conn.getresponse()
 

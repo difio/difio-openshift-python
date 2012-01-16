@@ -1,4 +1,4 @@
-CloudBerry client for OpenShift Express / wsgi-3.2
+monupco.com client for OpenShift Express / wsgi-3.2
 ========================================================
 
 This git repository helps you set up and running a CloudBerry
@@ -7,7 +7,7 @@ client for wsgi-3.2 types of applications hosted on OpenShift Express.
 Installing in your OpenShift application
 --------------------------------------------------------
 
-Create an account at <http://cvmon-otb.rhcloud.com>
+Create an account at <http://monupco.com>
 
 Create a wsgi-3.2 application on OpenShift
 
@@ -29,7 +29,7 @@ Then push the application to OpenShift
     git push
 
 That's it, you can now checkout your application statistics at:
-<http://cvmon-otb.rhcloud.com>
+<http://monupco.com>
 
 
 Updating
