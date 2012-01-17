@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 from distutils.core import setup
 
 setup(
@@ -7,7 +9,8 @@ setup(
     author='Alexander Todorov',
     author_email='atodorov@nospam.otb.bg',
     url='http://monupco.com/',
-    download_url='https://github.com/monupco/monupco-openshift-express-python/downloads'
+    download_url='https://github.com/monupco/monupco-openshift-express-python/downloads',
+    py_modules=['monupco-openshift-express-python.py'],
     keywords = ['openshift', 'monupco', 'updates', 'cloud'],
     classifiers = [
         "Programming Language :: Python",
