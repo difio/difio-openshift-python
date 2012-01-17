@@ -1,5 +1,8 @@
 build:
-	./setup.py sbuild
+	./setup.py sdist
+
+upload: build
+	./setup.py register
 
 clean:
 	./setup.py clean
