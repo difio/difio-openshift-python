@@ -15,6 +15,7 @@ help:
 	@echo "Usage: make <target>                   "
 	@echo "                                       "
 	@echo " build - build the package             "
+	@echo " upload - upload to PyPI               "
 	@echo " clean - remove all build files        "
 	@echo " distclean - remove all non git files  "
 	@echo " help - show this help and exit        "
