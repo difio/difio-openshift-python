@@ -14,9 +14,8 @@ setup(
     description='monupco.com client for OpenShift Express / wsgi-3.2 applications',
     author='Alexander Todorov',
     author_email='atodorov@nospam.otb.bg',
-    url='http://monupco.com/',
+    url = 'http://github.com/monupco/monupco-openshift-express-python/',
     download_url='http://pypi.python.org/packages/source/m/%s/%s-%s.tar.gz' % (name, name, version),
-    sources = 'http://github.com/monupco/monupco-openshift-express-python/',
     py_modules=['monupco-openshift-express-python'],
     keywords = ['openshift', 'monupco', 'updates', 'cloud'],
     classifiers = [
