@@ -1,7 +1,7 @@
 monupco.com client for OpenShift Express / wsgi-3.2
 ========================================================
 
-This git repository helps you set up and running a CloudBerry
+This git repository helps you set up and running a monupco.com
 client for wsgi-3.2 types of applications hosted on OpenShift Express.
 
 Installing in your OpenShift application
@@ -16,13 +16,13 @@ Create a wsgi-3.2 application on OpenShift
 Add this upstream repo
 
     cd myapp
-    git remote add cloudberry -m master https://bitbucket.org/atodorov/cloudberry-openshift-express-python.git
-    git pull -s recursive -X theirs cloudberry master
+    git remote add monupco -m master https://bitbucket.org/atodorov/monupco-openshift-express-python.git
+    git pull -s recursive -X theirs monupco master
 
-Set your username and application package name in the ./data/CLOUDBERRY_SETTINGS file
+Set your username and application package name in the ./data/MONUPCO_SETTINGS file
 
-    echo "export CLOUDBERRY_USERNAME='YourUserName'"  >  ./data/CLOUDBERRY_SETTINGS
-    echo "export CLOUDBERRY_APP_PKG='AppPackageName'" >> ./data/CLOUDBERRY_SETTINGS
+    echo "export MONUPCO_USERNAME='YourUserName'"  >  ./data/MONUPCO_SETTINGS
+    echo "export MONUPCO_APP_PKG='AppPackageName'" >> ./data/MONUPCO_SETTINGS
 
 Then push the application to OpenShift
 
@@ -35,6 +35,6 @@ That's it, you can now checkout your application statistics at:
 Updating
 --------------------------------------------------------
 
-To update the CloudBerry client to a later version execute
+To update the monupco.com client to a later version execute
 
-    git pull cloudberry master
+    git pull monupco master
