@@ -7,6 +7,6 @@
 source $OPENSHIFT_APP_DIR/virtenv/bin/activate
 
 # Set user defined settings
-source $OPENSHIFT_REPO_DIR/data/CLOUDBERRY_SETTINGS
+source $OPENSHIFT_REPO_DIR/data/MONUPCO_SETTINGS
 
-python $OPENSHIFT_REPO_DIR/.openshift/action_hooks/cloudberry-openshift-express-python
+python $OPENSHIFT_REPO_DIR/.openshift/action_hooks/monupco-openshift-express-python

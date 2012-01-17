@@ -35,7 +35,7 @@ from exceptions import BaseException
 from pip.util import get_installed_distributions
 
 data = {
-    'username' : os.environ['CLOUDBERRY_USERNAME'],
+    'username' : os.environ['MONUPCO_USERNAME'],
     'name' : os.environ['OPENSHIFT_APP_NAME'],
     'uuid' : os.environ['OPENSHIFT_APP_UUID'],
     'type' : os.environ['OPENSHIFT_APP_TYPE'],
@@ -47,7 +47,7 @@ data = {
 
 for dist in get_installed_distributions(local_only=True):
     # skip the package for the application itself
-    if dist.project_name != os.environ['CLOUDBERRY_APP_PKG']:
+    if dist.project_name != os.environ['MONUPCO_APP_PKG']:
         data['installed'].append({'n' : dist.project_name, 'v' : dist.version})
 
 json_data = json.dumps(data)
