@@ -10,7 +10,7 @@ setup(
     author_email='atodorov@nospam.otb.bg',
     url='http://monupco.com/',
     download_url='https://github.com/monupco/monupco-openshift-express-python/downloads',
-    py_modules=['monupco-openshift-express-python.py'],
+    py_modules=['monupco-openshift-express-python'],
     keywords = ['openshift', 'monupco', 'updates', 'cloud'],
     classifiers = [
         "Programming Language :: Python",
