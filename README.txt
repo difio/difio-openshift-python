@@ -10,9 +10,13 @@ Create an account at <http://monupco.com>
 
 Create a wsgi-3.2 application on OpenShift
 
+::
+
     rhc-create-app -a myapp -t wsgi-3.2
 
 Add a dependency in your setup.py file
+
+::
 
     from setuptools import setup
 
@@ -24,12 +28,17 @@ Add a dependency in your setup.py file
 
 Set your username and application name in the ./data/MONUPCO_SETTINGS file
 
+::
+
+    cd ./myapp/
     echo "export MONUPCO_USERNAME='YourUserName'"  >  ./data/MONUPCO_SETTINGS
     echo "export MONUPCO_APP_NAME='MyApplication'" >> ./data/MONUPCO_SETTINGS
 
 Then push your application to OpenShift
 
+::
+
     git push
 
-That's it, you can now checkout your application statistics at:
+That's it, you can now checkout your application statistics at
 <http://monupco.com>
