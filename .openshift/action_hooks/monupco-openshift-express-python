@@ -24,8 +24,6 @@
 #
 #####################################################################################
 
-__version__ = 1.1
-
 import os
 import sys
 import json
@@ -47,7 +45,7 @@ data = {
 
 for dist in get_installed_distributions(local_only=True):
     # skip the package for the application itself
-    if dist.project_name != os.environ['MONUPCO_APP_PKG']:
+    if dist.project_name != os.environ['MONUPCO_APP_NAME']:
         data['installed'].append({'n' : dist.project_name, 'v' : dist.version})
 
 json_data = json.dumps(data)

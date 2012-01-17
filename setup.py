@@ -1,3 +1,28 @@
+from distutils.core import setup
+
+setup(
+    name='monupco-openshift-express-python',
+    version='1.2',
+    description='monupco.com client for OpenShift Express / wsgi-3.2 applications',
+    author='Alexander Todorov',
+    author_email='atodorov@nospam.otb.bg',
+    url='http://monupco.com/',
+    download_url='https://github.com/monupco/monupco-openshift-express-python/downloads'
+    keywords = ['openshift', 'monupco', 'updates', 'cloud'],
+    classifiers = [
+        "Programming Language :: Python",
+        "Programming Language :: Python :: 3",
+        "Development Status :: 5 - Production",
+        "Environment :: Other Environment",
+        "Intended Audience :: Developers",
+        "Intended Audience :: System administrators",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: POSIX :: Linux",
+        "Topic :: System",
+        "Topic :: System :: Monitoring",
+        "Topic :: System :: Systems administration",
+        ],
+    long_description = """
 monupco.com client for OpenShift Express / wsgi-3.2
 --------------------------------------------------------
 
@@ -36,3 +61,5 @@ Then push your application to OpenShift
 
 That's it, you can now checkout your application statistics at:
 <http://monupco.com>
+"""
+     )
