@@ -1,6 +1,3 @@
-monupco.com client for OpenShift Express / wsgi-3.2
---------------------------------------------------------
-
 This is a client side agent for monupco.com. It compiles
 a list of locally installed Python packages and sends it to
 monupco.com.
