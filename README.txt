@@ -45,7 +45,7 @@ Enable the registration script in .openshift/action_hooks/post_deploy
     source $OPENSHIFT_REPO_DIR/data/MONUPCO_SETTINGS
 
     # Register/update the application
-    python $OPENSHIFT_REPO_DIR/virtenv/bin/monupco-openshift-express-python
+    python $OPENSHIFT_APP_DIR/virtenv/bin/monupco-openshift-express-python
 
 Then push your application to OpenShift
 
