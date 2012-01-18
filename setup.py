@@ -6,7 +6,7 @@ with open('README.txt') as file:
     long_description = file.read()
 
 name = 'monupco-openshift-express-python'
-version='1.3'
+version='1.4'
 
 setup(
     name=name,
@@ -15,8 +15,7 @@ setup(
     author='Alexander Todorov',
     author_email='atodorov@nospam.otb.bg',
     url = 'http://github.com/monupco/monupco-openshift-express-python/',
-    download_url='http://pypi.python.org/packages/source/m/%s/%s-%s.tar.gz' % (name, name, version),
-    py_modules=['monupco-openshift-express-python'],
+    scripts=['monupco-openshift-express-python'],
     keywords = ['openshift', 'monupco', 'updates', 'cloud'],
     classifiers = [
         "Programming Language :: Python",
