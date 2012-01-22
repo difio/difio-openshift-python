@@ -33,14 +33,14 @@ from exceptions import BaseException
 from pip.util import get_installed_distributions
 
 data = {
-    'username' : os.environ['MONUPCO_USERNAME'],
-    'name' : os.environ['OPENSHIFT_APP_NAME'],
-    'uuid' : os.environ['OPENSHIFT_APP_UUID'],
-    'type' : os.environ['OPENSHIFT_APP_TYPE'],
-    'url'  : 'http://%s' % os.environ['OPENSHIFT_APP_DNS'],
-    'vendor'   : 0, # Red Hat OpenShift Express
-    'pkg_type' : 0, # Python PyPI
-    'installed' : [],
+    'user_id'    : int(os.environ['MONUPCO_USER_ID']),
+    'app_name'   : os.environ['OPENSHIFT_APP_NAME'],
+    'app_uuid'   : os.environ['OPENSHIFT_APP_UUID'],
+    'app_type'   : os.environ['OPENSHIFT_APP_TYPE'],
+    'app_url'    : 'http://%s' % os.environ['OPENSHIFT_APP_DNS'],
+    'app_vendor' : 0, # Red Hat OpenShift Express
+    'pkg_type'   : 0, # Python PyPI
+    'installed'  : [],
 }
 
 for dist in get_installed_distributions(local_only=True):

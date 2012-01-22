@@ -6,7 +6,7 @@ with open('README.txt') as file:
     long_description = file.read()
 
 name = 'monupco-openshift-express-python'
-version='1.4'
+version='1.5'
 
 setup(
     name=name,
