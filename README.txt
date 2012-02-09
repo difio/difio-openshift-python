@@ -12,7 +12,7 @@ Create a wsgi-3.2 application on OpenShift
 
 ::
 
-    rhc-create-app -a myapp -t wsgi-3.2
+    rhc-create-app -a myapp -t python-2.6
 
 Add a dependency in your setup.py file
 
