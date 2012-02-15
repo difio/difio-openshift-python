@@ -1,16 +1,14 @@
 #!/usr/bin/python
 
+import _version
 from distutils.core import setup
 
 with open('README.txt') as file:
     long_description = file.read()
 
-name = 'monupco-openshift-express-python'
-version='1.5'
-
 setup(
-    name=name,
-    version=version,
+    name=_version.name,
+    version=_version.version,
     description='monupco.com client for OpenShift Express / wsgi-3.2 applications',
     author='Alexander Todorov',
     author_email='atodorov@nospam.otb.bg',
