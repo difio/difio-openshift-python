@@ -5,7 +5,7 @@ from distutils.core import setup
 
 def get_name_version():
     basedir = os.path.dirname(__file__)
-    with open(os.path.join(basedir, 'monupco_openshift_express_python/version.py')) as f:
+    with open(os.path.join(basedir, 'monupco/version.py')) as f:
         (name, version) = (None, None)
         exec(f.read())
         return (name, version)
@@ -23,8 +23,7 @@ setup(
     author='Alexander Todorov',
     author_email='atodorov@nospam.otb.bg',
     url = 'http://monupco.com',
-    packages=[name],
-    package_dir={name : 'monupco_openshift_express_python'},
+    packages=['monupco'],
     scripts=['monupco-openshift-express-python'],
     keywords = ['openshift', 'monupco', 'updates', 'cloud'],
     classifiers = [

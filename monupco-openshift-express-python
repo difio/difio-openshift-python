@@ -29,9 +29,9 @@ import sys
 import json
 import urllib
 import httplib
+from monupco import version
 from exceptions import BaseException
 from pip.util import get_installed_distributions
-from monupco_openshift_express_python import version
 
 data = {
     'user_id'    : int(os.environ['MONUPCO_USER_ID']),
