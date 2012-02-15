@@ -6,7 +6,7 @@ upload:
 
 clean:
 	./setup.py clean
-	rm -f MANIFEST
+	rm -f MANIFEST *.pyc
 
 distclean: clean
 	rm -rf dist/
