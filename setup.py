@@ -1,18 +1,30 @@
 #!/usr/bin/python
 
-import _version
+import os
 from distutils.core import setup
+
+def get_name_version():
+    basedir = os.path.dirname(__file__)
+    with open(os.path.join(basedir, 'monupco_openshift_express_python/version.py')) as f:
+        (name, version) = (None, None)
+        exec(f.read())
+        return (name, version)
+    raise RuntimeError('No version info found.')
 
 with open('README.txt') as file:
     long_description = file.read()
 
+(name, version) = get_name_version()
+
 setup(
-    name=_version.name,
-    version=_version.version,
+    name=name,
+    version=version,
     description='monupco.com client for OpenShift Express / wsgi-3.2 applications',
     author='Alexander Todorov',
     author_email='atodorov@nospam.otb.bg',
     url = 'http://monupco.com',
+    packages=[name],
+    package_dir={name : 'monupco_openshift_express_python'},
     scripts=['monupco-openshift-express-python'],
     keywords = ['openshift', 'monupco', 'updates', 'cloud'],
     classifiers = [
