@@ -51,9 +51,10 @@ for dist in get_installed_distributions(local_only=True):
 
 json_data = json.dumps(data)
 params = urllib.urlencode({'json_data' : json_data})
+headers = {"User-agent": "%s-%s" % (version.name, version.version)}
 
 conn = httplib.HTTPSConnection('monupco-otb.rhcloud.com')
-conn.request('POST', '/application/register/', params)
+conn.request('POST', '/application/register/', params, headers)
 response = conn.getresponse()
 
 if (response.status != 200) or (not response.getheader('Content-type').startswith('application/json')):
