@@ -45,7 +45,7 @@ data = {
 
 for dist in get_installed_distributions(local_only=True):
     # skip the package for the application itself
-    if dist.project_name != os.environ['MONUPCO_APP_NAME']:
+    if dist.project_name.lower() != os.environ['OPENSHIFT_APP_NAME'].lower():
         data['installed'].append({'n' : dist.project_name, 'v' : dist.version})
 
 json_data = json.dumps(data)

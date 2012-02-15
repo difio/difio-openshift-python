@@ -32,7 +32,6 @@ Set your username and application name in the ./data/MONUPCO_SETTINGS file
 
     cd ./myapp/
     echo "export MONUPCO_USER_ID=YourUserID"       >  ./data/MONUPCO_SETTINGS
-    echo "export MONUPCO_APP_NAME='MyApplication'" >> ./data/MONUPCO_SETTINGS
 
 Enable the registration script in .openshift/action_hooks/post_deploy
 
