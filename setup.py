@@ -5,7 +5,7 @@ from distutils.core import setup
 
 def get_name_version():
     basedir = os.path.dirname(__file__)
-    with open(os.path.join(basedir, 'monupco/version.py')) as f:
+    with open(os.path.join(basedir, 'monupco_ose_python/version.py')) as f:
         (name, version) = (None, None)
         exec(f.read())
         return (name, version)
