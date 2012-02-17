@@ -23,7 +23,7 @@ setup(
     author='Alexander Todorov',
     author_email='atodorov@nospam.otb.bg',
     url = 'http://github.com/monupco/monupco-openshift-express-python',
-    packages=['monupco'],
+    packages=['monupco_ose_python'],
     scripts=['monupco-openshift-express-python'],
     keywords = ['openshift', 'monupco', 'updates', 'cloud'],
     classifiers = [

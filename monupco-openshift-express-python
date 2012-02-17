@@ -29,8 +29,8 @@ import sys
 import json
 import urllib
 import httplib
-from monupco import version
 from exceptions import BaseException
+from monupco_ose_python import version
 from pip.util import get_installed_distributions
 
 data = {
