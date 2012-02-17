@@ -1,2 +1,2 @@
 name = 'monupco-openshift-express-python'
-version='1.6.3'
+version='1.7'
