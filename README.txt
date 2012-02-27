@@ -8,7 +8,7 @@ Installing on your OpenShift application
 
 Create an account at <http://monupco.com>
 
-Create a wsgi-3.2 application on OpenShift
+Create a Python application on OpenShift
 
 ::
 

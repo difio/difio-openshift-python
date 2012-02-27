@@ -19,7 +19,7 @@ with open('README.txt') as file:
 setup(
     name=name,
     version=version,
-    description='monupco.com client for OpenShift Express / wsgi-3.2 applications',
+    description='monupco.com client for OpenShift Express / Python applications',
     author='Alexander Todorov',
     author_email='atodorov@nospam.otb.bg',
     url = 'http://github.com/monupco/monupco-openshift-express-python',
