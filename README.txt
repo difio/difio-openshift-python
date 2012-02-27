@@ -1,5 +1,7 @@
-This is a client side agent for monupco.com. It compiles
-a list of locally installed Python packages and sends it to
+monupco.com registration agent for OpenShift Express / Python
+applications.
+
+It compiles a list of locally installed Python packages and sends it to
 monupco.com.
 
 
