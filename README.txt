@@ -28,12 +28,24 @@ Add a dependency in your setup.py file
         install_requires=['monupco-openshift-express-python'],
      )
 
-Set your username and application name in the ./data/MONUPCO_SETTINGS file
+Set your userID in the ./data/MONUPCO_SETTINGS file
 
 ::
 
     cd ./myapp/
     echo "export MONUPCO_USER_ID=YourUserID"       >  ./data/MONUPCO_SETTINGS
+
+OpenShift by default will treat your application as a package. If the name given in
+setup.py is different from the name passed to rhc-create-app command then
+set the application name in the ./data/MONUPCO_SETTINGS file
+
+::
+
+    echo "export MONUPCO_APP_NAME='MyApplication'" >> ./data/MONUPCO_SETTINGS
+
+This registration script will ignore package names that match the value of 
+OPENSHIFT_APP_NAME and MONUPCO_APP_NAME environment variables.
+
 
 Enable the registration script in .openshift/action_hooks/post_deploy
 
@@ -54,5 +66,5 @@ Then push your application to OpenShift
 
     git push
 
-That's it, you can now checkout your application statistics at
+That's it, you can now check your application statistics at
 <http://monupco.com>
