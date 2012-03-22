@@ -35,16 +35,16 @@ from pip.util import get_installed_distributions
 
 data = {
     'user_id'    : int(os.environ['MONUPCO_USER_ID']),
-    'app_name'   : os.environ['OPENSHIFT_APP_NAME'],
-    'app_uuid'   : os.environ['OPENSHIFT_APP_UUID'],
-    'app_type'   : os.environ['OPENSHIFT_APP_TYPE'],
-    'app_url'    : 'http://%s' % os.environ['OPENSHIFT_APP_DNS'],
+    'app_name'   : os.environ['OPENSHIFT_GEAR_NAME'],
+    'app_uuid'   : os.environ['OPENSHIFT_GEAR_UUID'],
+    'app_type'   : os.environ['OPENSHIFT_GEAR_TYPE'],
+    'app_url'    : 'http://%s' % os.environ['OPENSHIFT_GEAR_DNS'],
     'app_vendor' : 0, # Red Hat OpenShift Express
     'pkg_type'   : 0, # Python PyPI
     'installed'  : [],
 }
 
-excluded_names = [os.environ['OPENSHIFT_APP_NAME'].lower()]
+excluded_names = [os.environ['OPENSHIFT_GEAR_NAME'].lower()]
 if os.environ.has_key('MONUPCO_APP_NAME'):
     excluded_names.append(os.environ['MONUPCO_APP_NAME'].lower()) 
 

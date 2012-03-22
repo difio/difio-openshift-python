@@ -44,7 +44,7 @@ set the application name in the ./data/MONUPCO_SETTINGS file
     echo "export MONUPCO_APP_NAME='MyApplication'" >> ./data/MONUPCO_SETTINGS
 
 This registration script will ignore package names that match the value of 
-OPENSHIFT_APP_NAME and MONUPCO_APP_NAME environment variables.
+OPENSHIFT_GEAR_NAME and MONUPCO_APP_NAME environment variables.
 
 
 Enable the registration script in .openshift/action_hooks/post_deploy
@@ -52,13 +52,13 @@ Enable the registration script in .openshift/action_hooks/post_deploy
 ::
 
     # Activate VirtualEnv in order to use the correct libraries
-    source $OPENSHIFT_APP_DIR/virtenv/bin/activate
+    source $OPENSHIFT_GEAR_DIR/virtenv/bin/activate
 
     # Set user defined settings
     source $OPENSHIFT_REPO_DIR/data/MONUPCO_SETTINGS
 
     # Register/update the application
-    python $OPENSHIFT_APP_DIR/virtenv/bin/monupco-openshift-express-python
+    python $OPENSHIFT_GEAR_DIR/virtenv/bin/monupco-openshift-express-python
 
 Then push your application to OpenShift
 
