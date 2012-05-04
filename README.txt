@@ -1,4 +1,4 @@
-monupco.com registration agent for OpenShift Express / Python
+monupco.com registration agent for OpenShift / Python
 applications.
 
 It compiles a list of locally installed Python packages and sends it to
@@ -25,7 +25,7 @@ Add a dependency in your setup.py file
     setup(
         name='MyApplication',
         version='1.0',
-        install_requires=['monupco-openshift-express-python'],
+        install_requires=['monupco-openshift-python'],
      )
 
 Set your userID in the ./data/MONUPCO_SETTINGS file
@@ -58,7 +58,7 @@ Enable the registration script in .openshift/action_hooks/post_deploy
     source $OPENSHIFT_REPO_DIR/data/MONUPCO_SETTINGS
 
     # Register/update the application
-    python $OPENSHIFT_GEAR_DIR/virtenv/bin/monupco-openshift-express-python
+    python $OPENSHIFT_GEAR_DIR/virtenv/bin/monupco-openshift-python
 
 Then push your application to OpenShift
 

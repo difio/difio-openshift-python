@@ -30,7 +30,7 @@ import json
 import urllib
 import httplib
 from exceptions import BaseException
-from monupco_ose_python import version
+from monupco_openshift_python import version
 from pip.util import get_installed_distributions
 
 data = {
@@ -39,7 +39,7 @@ data = {
     'app_uuid'   : os.environ['OPENSHIFT_GEAR_UUID'],
     'app_type'   : os.environ['OPENSHIFT_GEAR_TYPE'],
     'app_url'    : 'http://%s' % os.environ['OPENSHIFT_GEAR_DNS'],
-    'app_vendor' : 0, # Red Hat OpenShift Express
+    'app_vendor' : 0, # Red Hat OpenShift
     'pkg_type'   : 0, # Python PyPI
     'installed'  : [],
 }
