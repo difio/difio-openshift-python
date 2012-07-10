@@ -6,7 +6,7 @@ upload:
 
 clean:
 	./setup.py clean
-	rm -f MANIFEST *.pyc
+	rm -f MANIFEST *.pyc difio_openshift_python/*.pyc
 
 distclean: clean
 	rm -rf dist/
