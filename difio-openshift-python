@@ -30,11 +30,11 @@ import json
 import urllib
 import httplib
 from exceptions import BaseException
-from monupco_openshift_python import version
+from difio_openshift_python import version
 from pip.util import get_installed_distributions
 
 data = {
-    'user_id'    : int(os.environ['MONUPCO_USER_ID']),
+    'user_id'    : int(os.environ['DIFIO_USER_ID']),
     'app_name'   : os.environ['OPENSHIFT_GEAR_NAME'],
     'app_uuid'   : os.environ['OPENSHIFT_GEAR_UUID'],
     'app_type'   : os.environ['OPENSHIFT_GEAR_TYPE'],
@@ -45,8 +45,8 @@ data = {
 }
 
 excluded_names = [os.environ['OPENSHIFT_GEAR_NAME'].lower()]
-if os.environ.has_key('MONUPCO_APP_NAME'):
-    excluded_names.append(os.environ['MONUPCO_APP_NAME'].lower()) 
+if os.environ.has_key('DIFIO_APP_NAME'):
+    excluded_names.append(os.environ['DIFIO_APP_NAME'].lower()) 
 
 for dist in get_installed_distributions(local_only=True):
     # skip the package for the application itself
@@ -57,7 +57,7 @@ json_data = json.dumps(data)
 params = urllib.urlencode({'json_data' : json_data})
 headers = {"User-agent": "%s/%s" % (version.name, version.version)}
 
-conn = httplib.HTTPSConnection('monupco-otb.rhcloud.com')
+conn = httplib.HTTPSConnection('difio-otb.rhcloud.com')
 conn.request('POST', '/application/register/', params, headers)
 response = conn.getresponse()
 

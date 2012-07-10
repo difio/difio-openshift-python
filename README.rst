@@ -1,14 +1,13 @@
-monupco.com registration agent for OpenShift / Python
-applications.
+Difio registration agent for OpenShift / Python applications.
 
 It compiles a list of locally installed Python packages and sends it to
-monupco.com.
+<http://www.dif.io>.
 
 
 Installing on your OpenShift application
 ----------------------------------------
 
-Create an account at <http://monupco.com>
+Create an account at <http://www.dif.io>
 
 Create a Python application on OpenShift
 
@@ -25,26 +24,26 @@ Add a dependency in your setup.py file
     setup(
         name='MyApplication',
         version='1.0',
-        install_requires=['monupco-openshift-python'],
+        install_requires=['difio-openshift-python'],
      )
 
-Set your userID in the ./data/MONUPCO_SETTINGS file
+Set your userID in the ./data/DIFIO_SETTINGS file
 
 ::
 
     cd ./myapp/
-    echo "export MONUPCO_USER_ID=YourUserID"       >  ./data/MONUPCO_SETTINGS
+    echo "export DIFIO_USER_ID=YourUserID" > ./data/DIFIO_SETTINGS
 
 OpenShift by default will treat your application as a package. If the name given in
 setup.py is different from the name passed to rhc-create-app command then
-set the application name in the ./data/MONUPCO_SETTINGS file
+set the application name in the ./data/DIFIO_SETTINGS file
 
 ::
 
-    echo "export MONUPCO_APP_NAME='MyApplication'" >> ./data/MONUPCO_SETTINGS
+    echo "export DIFIO_APP_NAME='MyApplication'" >> ./data/DIFIO_SETTINGS
 
 This registration script will ignore package names that match the value of 
-OPENSHIFT_GEAR_NAME and MONUPCO_APP_NAME environment variables.
+OPENSHIFT_GEAR_NAME and DIFIO_APP_NAME environment variables.
 
 
 Enable the registration script in .openshift/action_hooks/post_deploy
@@ -55,10 +54,10 @@ Enable the registration script in .openshift/action_hooks/post_deploy
     source $OPENSHIFT_GEAR_DIR/virtenv/bin/activate
 
     # Set user defined settings
-    source $OPENSHIFT_REPO_DIR/data/MONUPCO_SETTINGS
+    source $OPENSHIFT_REPO_DIR/data/DIFIO_SETTINGS
 
     # Register/update the application
-    python $OPENSHIFT_GEAR_DIR/virtenv/bin/monupco-openshift-python
+    python $OPENSHIFT_GEAR_DIR/virtenv/bin/difio-openshift-python
 
 Then push your application to OpenShift
 
@@ -67,4 +66,4 @@ Then push your application to OpenShift
     git push
 
 That's it, you can now check your application statistics at
-<http://monupco.com>
+<http://www.dif.io>

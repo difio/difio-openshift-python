@@ -1,2 +1,2 @@
-name = 'monupco-openshift-python'
-version='1.9'
+name = 'difio-openshift-python'
+version='2.0'
