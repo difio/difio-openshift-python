@@ -51,13 +51,13 @@ Enable the registration script in .openshift/action_hooks/post_deploy
 ::
 
     # Activate VirtualEnv in order to use the correct libraries
-    source $OPENSHIFT_GEAR_DIR/virtenv/bin/activate
+    source $OPENSHIFT_HOMEDIR/python-2.6/virtenv/bin/activate
 
     # Set user defined settings
     source $OPENSHIFT_REPO_DIR/data/DIFIO_SETTINGS
 
     # Register/update the application
-    python $OPENSHIFT_GEAR_DIR/virtenv/bin/difio-openshift-python
+    python $OPENSHIFT_HOMEDIR/python-2.6/virtenv/bin/difio-openshift-python
 
 Then push your application to OpenShift
 
