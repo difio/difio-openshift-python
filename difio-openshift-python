@@ -24,7 +24,7 @@
 #
 #####################################################################################
 
-import sys
+import os
 from common_difio import difio_register
 from difio_openshift_python import version
 
@@ -32,7 +32,6 @@ data = {
     'user_id'    : int(os.environ['DIFIO_USER_ID']),
     'app_name'   : os.environ['OPENSHIFT_GEAR_NAME'],
     'app_uuid'   : os.environ['OPENSHIFT_GEAR_UUID'],
-    'app_type'   : 'python-%d.%d.%d' % (sys.version_info[0], sys.version_info[1], sys.version_info[2]),
     'app_url'    : 'http://%s' % os.environ['OPENSHIFT_GEAR_DNS'],
     'app_vendor' : 0, # Red Hat OpenShift
     'pkg_type'   : 0, # Python PyPI
