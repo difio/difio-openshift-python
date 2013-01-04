@@ -40,4 +40,5 @@ setup(
         "Topic :: System :: Systems Administration",
         ],
     long_description = long_description,
+    install_requires = ['common-python-difio'],
      )

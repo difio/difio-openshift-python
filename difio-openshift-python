@@ -2,7 +2,7 @@
 
 #####################################################################################
 #
-# Copyright (c) 2011-2012, Alexander Todorov <atodorov()otb.bg>
+# Copyright (c) 2011-2013, Alexander Todorov <atodorov@nospam.dif.io>
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -24,20 +24,15 @@
 #
 #####################################################################################
 
-import os
 import sys
-import json
-import urllib
-import httplib
-from exceptions import BaseException
+from common_difio import difio_register
 from difio_openshift_python import version
-from pip.util import get_installed_distributions
 
 data = {
     'user_id'    : int(os.environ['DIFIO_USER_ID']),
     'app_name'   : os.environ['OPENSHIFT_GEAR_NAME'],
     'app_uuid'   : os.environ['OPENSHIFT_GEAR_UUID'],
-    'app_type'   : os.environ['OPENSHIFT_GEAR_TYPE'],
+    'app_type'   : 'python-%d.%d.%d' % (sys.version_info[0], sys.version_info[1], sys.version_info[2]),
     'app_url'    : 'http://%s' % os.environ['OPENSHIFT_GEAR_DNS'],
     'app_vendor' : 0, # Red Hat OpenShift
     'pkg_type'   : 0, # Python PyPI
@@ -46,24 +41,6 @@ data = {
 
 excluded_names = [os.environ['OPENSHIFT_GEAR_NAME'].lower()]
 if os.environ.has_key('DIFIO_APP_NAME'):
-    excluded_names.append(os.environ['DIFIO_APP_NAME'].lower()) 
+    excluded_names.append(os.environ['DIFIO_APP_NAME'].lower())
 
-for dist in get_installed_distributions(local_only=True):
-    # skip the package for the application itself
-    if dist.project_name.lower() not in excluded_names:
-        data['installed'].append({'n' : dist.project_name, 'v' : dist.version})
-
-json_data = json.dumps(data)
-params = urllib.urlencode({'json_data' : json_data})
-headers = {"User-agent": "%s/%s" % (version.name, version.version)}
-
-conn = httplib.HTTPSConnection('difio-otb.rhcloud.com')
-conn.request('POST', '/application/register/', params, headers)
-response = conn.getresponse()
-
-if (response.status != 200) or (not response.getheader('Content-type').startswith('application/json')):
-    raise BaseException('Communication failed - %s' % response.read())
-
-result = json.loads(response.read())
-print result['message']
-sys.exit(result['exit_code'])
+difio_register(data, "%s/%s" % (version.name, version.version), excluded_names)
